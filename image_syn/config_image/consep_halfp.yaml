@@ -1,0 +1,43 @@
+class_cond: true
+with_nuclei: true
+use_ddim: false
+model_path: /path/masktoimg_finetune/stage3_emamodel.pt
+results_path: /path/1-hvtpsnpy_proc_large5/
+num_samples: 3
+batch_size: 2
+learn_sigma: true
+diffusion_steps: 1000
+noise_schedule: linear
+timestep_respacing: 250
+image_size: 256
+num_channels: 256
+num_res_blocks: 2
+num_heads: 4
+num_heads_upsample: -1
+num_head_channels: 64
+attention_resolutions: 32,16,8
+resblock_updown: true
+dropout: 0.0
+clip_denoised: true
+use_fp16: false
+use_scale_shift_norm: true
+lr_kernel_n_std: 2
+show_progress: false
+inpa_inj_sched_prev: true
+n_jobs: 25
+print_estimated_vars: true
+inpa_inj_sched_prev_cumnoise: false
+schedule_jump_params:
+  t_T: 200
+  n_sample: 1
+  jump_length: 10
+  jump_n_sample: 10
+num_classes: 5
+return_dataloader: false
+drop_last: false
+img_dir: /path/1-hvtpsnpy_proc_large5/1-hvtpsnpy_proc/
+respace_interpolate: false
+is_train: false
+no_instance: false
+s: 1.5
+trunc: 150

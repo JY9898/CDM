@@ -1,0 +1,44 @@
+smpname: '1-hvtps_fixtp1_dila5'
+class_cond: false
+with_nuclei: true
+use_ddim: false
+model_path: /path/diff_hvtps/ema_0.9999_400000.pt
+results_path: /path/diff_hvtp_rare1/
+num_samples: 4
+batch_size: 2
+learn_sigma: true
+diffusion_steps: 1000
+noise_schedule: linear
+timestep_respacing: 250
+image_size: 256
+num_channels: 256
+num_res_blocks: 2
+num_heads: 4
+num_heads_upsample: -1
+num_head_channels: 64
+attention_resolutions: 32,16,8
+resblock_updown: true
+use_scale_shift_norm: true
+dropout: 0.0
+clip_denoised: true
+use_fp16: true
+lr_kernel_n_std: 2
+show_progress: false
+inpa_inj_sched_prev: true
+n_jobs: 25
+print_estimated_vars: true
+inpa_inj_sched_prev_cumnoise: false
+schedule_jump_params:
+  t_T: 250
+  n_sample: 1
+  jump_length: 10
+  jump_n_sample: 10
+deterministic: false
+random_flip: false
+random_rotate: false
+ann_dir: /path/diff_hvtp_rare1/0-hvt1npy_proc_large5/
+respace_interpolate: false
+num_classes: 5
+in_channels: 6
+rare_class: 1
+dila_size: 5

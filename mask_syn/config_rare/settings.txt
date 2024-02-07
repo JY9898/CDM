@@ -1,0 +1,19 @@
+consep-rareclass1:
+--attention_resolutions 32,16,8 --class_cond False --diffusion_steps 1000 --image_size 256 \
+--learn_sigma True --noise_schedule linear --num_channels 256 --num_head_channels 64 --num_res_blocks 2 \
+--resblock_updown True --use_fp16 True --use_scale_shift_norm False --channel_mult 1,1,2,3,4 --predict_xstart False
+
+monusac-rareclass3:
+--attention_resolutions 32,16,8 --class_cond False --diffusion_steps 1000 --image_size 256 \
+--learn_sigma True --noise_schedule linear --num_channels 256 --num_head_channels 64 --num_res_blocks 2 \
+--resblock_updown True --use_fp16 True --use_scale_shift_norm False --channel_mult 1,1,2,3,4 --predict_xstart False
+
+monusac-rareclass4:
+--attention_resolutions 32,16,8 --class_cond False --diffusion_steps 1000 --image_size 256 \
+--learn_sigma True --noise_schedule linear --num_channels 256 --num_head_channels 64 --num_res_blocks 2 \
+--resblock_updown True --use_fp16 True --use_scale_shift_norm False --channel_mult 1,1,2,3,4 --predict_xstart False
+
+pannuke-rareclass3:
+--attention_resolutions 32,16,8 --class_cond False --diffusion_steps 1000 --image_size 256 \
+--learn_sigma True --noise_schedule linear --num_channels 192 --num_head_channels 64 --num_res_blocks 2 \
+--resblock_updown True --use_fp16 True --use_scale_shift_norm False  --in_channels 3 --channel_mult 1,1,2,3,4 --predict_xstart False
