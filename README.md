@@ -4,7 +4,7 @@
 ## Abstract
 
 We provide our PyTorch implementation of **Cascaded Diffusion Models for Augmenting Imbalanced Nuclei Classification**. 
-In this paper, we propose a novel framework based on DDPM for semantic image synthesis.
+In this paper, we propose a Cascaded Diffusion-based Sample Synthesis (CDS) framework for augmenting minority-class images.
 
 
 
@@ -121,13 +121,8 @@ python run_infer_and_compute_stats.py --batch_size=128 --gpu=1 --model_mode="fas
 ## Apply pre-trained models and evaluate
 
 ### Pretrained Models
-|Dataset       |1. Rare-Class     |2. Multi-Class    |3. Mask-to-Image  |4. HoverNet-MAT   |
-|:-------------|:-----------------|:-----------------|:-----------------|:-----------------|
-|CoNSeP|[checkpoint]()|[checkpoint]()|[checkpoint]()|[checkpoint]()|
-|MoNuSAC|[checkpoint](), [checkpoint]()|[checkpoint]()|[checkpoint]()|[checkpoint]()|
-|PanNuke|[checkpoint]()|[checkpoint]()|[checkpoint]()|[checkpoint]()|
+We provide pretrained models for each stage(Rare-Class Generative model, Multi-Class Generative model, Mask-to-Image Generative model, HoverNet-MAT model). You can download all pretrained models [here](https://pan.baidu.com/s/1S7U1JXXn_nCW9ZAy0zI-0g) (passcode: f0sw). The detailed parameters of the model are set in the respective config folders.
 
-The detailed parameters of the model are set in the respective config folders.
 
 ## Acknowledge
 Our code is developed based on [guided-diffusion](https://github.com/openai/guided-diffusion), [Repaint](https://github.com/andreas128/RePaint) and [HoverNet](https://github.com/vqdang/hover_net). 
