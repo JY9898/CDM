@@ -152,7 +152,7 @@ class FCDiscriminator_img(Net):
         self.conv1 = nn.Conv2d(1024, 256, kernel_size=3, padding=1)
         self.conv2 = nn.Conv2d(256, 64, kernel_size=3, padding=1)
         self.conv3 = nn.Conv2d(64, 16, kernel_size=3, padding=1)
-        self.conv4 = nn.Conv2d(16, 2, kernel_size=3, padding=1)
+        self.conv4 = nn.Conv2d(16, 1, kernel_size=3, padding=1)
         self.leaky_relu = nn.LeakyReLU(negative_slope=0.2, inplace=True)
         # self.interp = nn.Upsample(size=(164, 164), mode='bilinear')
         self.weights_init()
@@ -161,11 +161,8 @@ class FCDiscriminator_img(Net):
         x = self.leaky_relu(self.conv1(x))
         x = self.leaky_relu(self.conv2(x))
         x = self.leaky_relu(self.conv3(x))
-        x = self.conv4(x)
-        x = F.softmax(x, dim=1)
-        output = torch.argmax(x, dim=1, keepdim=True)
-        
-        return F.interpolate(output.float(), size=(164, 164), mode='bilinear')
+        x = self.conv4(x)  # logits [B, 1, H, W]
+        return F.interpolate(x, size=(164, 164), mode='bilinear')
     
 ####
 def create_model(mode=None, **kwargs):
